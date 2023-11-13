@@ -14,10 +14,10 @@ USER $APP_USER
 # RUN git clone https://github.com/jedisct1/doh-server.git .
 # RUN git checkout tags/0.9.0 -b 0.9.0
 # RUN git clone --depth 1 -b 0.9.0 https://github.com/jedisct1/doh-server.git .
-RUN git clone https://github.com/jedisct1/doh-server.git --branch 0.9.7 .
+# RUN git clone https://github.com/jedisct1/doh-server.git --branch 0.9.7 .
 
 # build specific commit
-# RUN git checkout f9d2a0fc9421fb8dfd6514bc1d73250e0498b238 && git reset --hard
+RUN git checkout c92308ccbb48ebea146da4fd83800d0d4d6d5315 && git reset --hard
 
 RUN cargo install doh-proxy \
     && cp -p /usr/local/cargo/bin/doh-proxy $APP_HOME/
