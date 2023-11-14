@@ -1,4 +1,4 @@
-FROM rust:1.67 as builder
+FROM rust:1.73 as builder
 
 ENV APP_USER app
 ENV APP_HOME /app
@@ -30,7 +30,7 @@ WORKDIR $APP_HOME
 RUN rm -rf build
 
 
-FROM debian:buster-slim
+FROM debian:bookworm-slim
 
 ENV APP_USER app
 ENV APP_HOME /app
